@@ -1,0 +1,20 @@
+{
+  "life_state": {
+    "life": {
+      "age": 19,
+      "history": [
+        "You begin a new cyberpunk life with equal parts doubt and momentum.",
+        "At age 19, you chose 'Choose focus'. You focus well."
+      ],
+      "name": "Mira",
+      "pending_scene": null,
+      "stats": {
+        "health": 6,
+        "joy": 7,
+        "reputation": 5,
+        "wealth": 6
+      },
+      "theme": "cyberpunk"
+    }
+  }
+}

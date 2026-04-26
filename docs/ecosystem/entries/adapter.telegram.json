@@ -1,0 +1,17 @@
+{
+  "id": "adapter.telegram",
+  "name": "Telegram Adapter",
+  "type": "adapter",
+  "summary": "Built-in Telegram Runtime API adapter using getUpdates long polling and sendMessage replies.",
+  "package": "asterline",
+  "repository": "https://github.com/asterline/asterline",
+  "license": "MIT",
+  "status": "active",
+  "verification": ["official", "package_verified", "security_reviewed"],
+  "entry_points": [],
+  "tags": ["builtin", "telegram", "long-polling"],
+  "platforms": ["telegram"],
+  "install_command": "uv add asterline",
+  "source_url": "https://github.com/asterline/asterline",
+  "updated_at": "2026-04-26"
+}

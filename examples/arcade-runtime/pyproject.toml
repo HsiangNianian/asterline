@@ -1,0 +1,11 @@
+[project]
+name = "arcade-runtime"
+version = "0.1.0"
+description = "Arcade-style Asterline example."
+requires-python = ">=3.10"
+dependencies = [
+    "asterline",
+]
+
+[tool.uv.sources]
+asterline = { workspace = true }

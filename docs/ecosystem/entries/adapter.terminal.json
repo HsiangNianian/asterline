@@ -1,0 +1,17 @@
+{
+  "id": "adapter.terminal",
+  "name": "Terminal Adapter",
+  "type": "adapter",
+  "summary": "Built-in terminal adapter for local development, demos, and plugin regression testing.",
+  "package": "asterline",
+  "repository": "https://github.com/asterline/asterline",
+  "license": "MIT",
+  "status": "active",
+  "verification": ["official", "package_verified", "security_reviewed"],
+  "entry_points": [],
+  "tags": ["builtin", "local", "development"],
+  "platforms": ["terminal"],
+  "install_command": "uv add asterline",
+  "source_url": "https://github.com/asterline/asterline",
+  "updated_at": "2026-04-26"
+}

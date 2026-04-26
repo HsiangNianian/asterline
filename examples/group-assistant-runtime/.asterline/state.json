@@ -1,0 +1,9 @@
+{
+  "room": {
+    "rooms": {
+      "terminal": [
+        "group-user: hello room"
+      ]
+    }
+  }
+}

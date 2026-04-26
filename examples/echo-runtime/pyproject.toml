@@ -1,0 +1,11 @@
+[project]
+name = "echo-runtime"
+version = "0.1.0"
+description = "Example Asterline application."
+requires-python = ">=3.10"
+dependencies = [
+    "asterline",
+]
+
+[tool.uv.sources]
+asterline = { workspace = true }
