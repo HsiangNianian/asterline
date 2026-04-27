@@ -6,7 +6,7 @@ Asterline 文档
    Asterline 是一个面向插件开发和多平台接入的消息运行时。业务代码写成普通 Python 插件；
    适配器负责协议边界；配置、权限、状态、审计和文档都作为工程能力保留下来。
 
-   :doc:`快速开始 <quickstart>` · :doc:`渐进式教程 <tutorials/index>` · :doc:`社区 <community/index>`
+   :doc:`快速开始 <quickstart>` · :doc:`渐进式教程 <tutorials/index>` · :doc:`社区资源 <community/blog/index>`
 
 
 .. container:: asterline-path
@@ -44,7 +44,7 @@ Asterline 文档
       ``asterline.adapter``。
 
    **社区贡献者**
-      先查看 :doc:`community/index`，再按 :doc:`tutorials/part-6-ecosystem-publishing` 提交条目。
+      先查看 :doc:`community/blog/index` 和 :doc:`community/store`，再按 :doc:`tutorials/part-6-ecosystem-publishing` 提交条目。
 
 设计取向
 --------
@@ -80,9 +80,10 @@ Asterline 文档
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: 社区
+   :caption: 社区资源
 
-   community/index
+   community/blog/index
+   community/store
 
 .. toctree::
    :hidden:

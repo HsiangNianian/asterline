@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="docs/_static/brand/asterline-logo-wide.svg" alt="Asterline" width="720">
+</p>
+
+<p align="center">
+  <strong>面向插件开发和多平台接入的 Rust + Python 消息运行时。</strong>
+</p>
+
 # Asterline
 
 Asterline 是一个 `Rust + Python` 双层跨平台消息运行时：
