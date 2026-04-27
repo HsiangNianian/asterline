@@ -10,6 +10,20 @@ DOCS_EXT = ROOT / "docs" / "_ext"
 sys.path.insert(0, str(PYTHON_SOURCE))
 sys.path.insert(0, str(DOCS_EXT))
 
+# Mock the Rust extension for Read the Docs builds
+# The _core module is a Rust extension that can't be built in RTD environment
+import sys as _sys
+from unittest.mock import MagicMock
+
+class MockCoreModule(MagicMock):
+    """Mock for the Rust _core extension."""
+    CoreMessage = MagicMock
+    deep_merge_json = lambda a, b: b  # type: ignore
+    next_event_id = lambda: "mock_event_id"  # type: ignore
+    normalize_onebot11_event = lambda raw, adapter, platform: raw  # type: ignore
+
+_sys.modules["asterline._core"] = MockCoreModule()
+
 project = "Asterline"
 author = "Asterline contributors"
 language = "zh_CN"
@@ -38,7 +52,7 @@ autosummary_imported_members = False
 autodoc_member_order = "bysource"
 autoclass_content = "both"
 autodoc_typehints = "description"
-autodoc_mock_imports = ["asterline._core", "openai"]
+autodoc_mock_imports = ["openai"]
 autodoc_default_options = {
     "members": True,
     "undoc-members": True,
