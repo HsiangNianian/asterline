@@ -63,6 +63,7 @@
 }
 
 .asterline-store-card {
+  background: var(--color-background-primary);
   border: 1px solid var(--color-background-border);
   border-radius: 8px;
   display: flex;
@@ -70,6 +71,17 @@
   gap: 0.45rem;
   min-width: 0;
   padding: 0.75rem;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.asterline-store-card:hover,
+.asterline-store-card:focus-within {
+  border-color: var(--color-brand-content);
+  box-shadow: 0 0 0 1px var(--color-brand-content), 0 0.6rem 1.4rem rgb(0 0 0 / 0.08);
+  transform: translateY(-1px);
 }
 
 .asterline-store-card--deprecated {
@@ -211,10 +223,11 @@
 .asterline-store-submit__dialog {
   background: var(--color-background-primary);
   border: 1px solid var(--color-background-border);
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 0.28);
   color: var(--color-foreground-primary);
-  max-height: min(90vh, 58rem);
-  max-width: min(96vw, 84rem);
+  max-height: min(92vh, 58rem);
+  max-width: min(96vw, 76rem);
   padding: 0;
   width: 100%;
 }
@@ -226,10 +239,11 @@
 .asterline-store-submit__dialog-header {
   align-items: start;
   border-bottom: 1px solid var(--color-background-border);
+  background: var(--color-background-secondary);
   display: flex;
   gap: 1rem;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 1.25rem;
 }
 
 .asterline-store-submit__dialog-header h3 {
@@ -248,56 +262,76 @@
 }
 
 .asterline-store-submit__form {
-  max-height: min(90vh, 58rem);
+  max-height: calc(min(92vh, 58rem) - 1px);
   overflow: auto;
   padding: 0;
 }
 
 .asterline-store-submit__body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.55fr);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.48fr);
   min-height: 0;
 }
 
 .asterline-store-submit__fields {
   display: grid;
   gap: 1rem;
-  padding: 1rem;
+  min-width: 0;
+  padding: 1.25rem;
 }
 
 .asterline-store-submit__grid {
   display: grid;
   gap: 0.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .asterline-store-submit__grid--compact {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.asterline-store-submit label {
+.asterline-store-submit .asterline-store-submit__field {
   display: grid;
   gap: 0.35rem;
+  min-width: 0;
 }
 
-.asterline-store-submit label span {
+.asterline-store-submit .asterline-store-submit__field span {
   font-size: 0.9rem;
   font-weight: 600;
+}
+
+.asterline-store-submit__field--textarea {
+  align-content: start;
 }
 
 .asterline-store-submit input,
 .asterline-store-submit select,
 .asterline-store-submit textarea {
+  background: var(--color-background-secondary);
   border: 1px solid var(--color-background-border);
   border-radius: 6px;
+  color: var(--color-foreground-primary);
   font: inherit;
   padding: 0.5rem 0.625rem;
   width: 100%;
 }
 
+.asterline-store-submit input:focus,
+.asterline-store-submit select:focus,
+.asterline-store-submit textarea:focus {
+  border-color: var(--color-brand-content);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-brand-content) 24%, transparent);
+  outline: none;
+}
+
 .asterline-store-submit textarea {
-  min-height: 6rem;
+  min-height: 5.25rem;
   resize: vertical;
+}
+
+.asterline-store-submit__fields > label textarea {
+  min-height: 4.75rem;
 }
 
 .asterline-store-submit small {
@@ -354,6 +388,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  max-height: calc(min(92vh, 58rem) - 5rem);
   position: sticky;
   top: 0;
 }
@@ -450,6 +485,14 @@
     grid-template-columns: 1fr;
   }
 
+  .asterline-store-submit__fields {
+    padding: 1rem;
+  }
+
+  .asterline-store-submit__grid {
+    grid-template-columns: 1fr;
+  }
+
   .asterline-store-submit__grid--compact {
     grid-template-columns: 1fr;
   }
@@ -465,5 +508,16 @@
 @media (min-width: 761px) and (max-width: 1180px) {
   .asterline-store__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .asterline-store-submit__body {
+    grid-template-columns: 1fr;
+  }
+
+  .asterline-store-submit__preview {
+    border-left: 0;
+    border-top: 1px solid var(--color-background-border);
+    max-height: 22rem;
+    position: static;
   }
 }

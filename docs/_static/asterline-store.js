@@ -254,7 +254,7 @@
     const help = attrs.help ? `<small>${escapeHtml(attrs.help)}</small>` : "";
     const value = attrs.value ? ` value="${escapeAttr(attrs.value)}"` : "";
     return `
-      <label>
+      <label class="asterline-store-submit__field">
         <span>${escapeHtml(label)}</span>
         <input name="${escapeAttr(name)}"${required}${placeholder}${value}>
         ${help}
@@ -267,7 +267,7 @@
     const placeholder = attrs.placeholder ? ` placeholder="${escapeAttr(attrs.placeholder)}"` : "";
     const help = attrs.help ? `<small>${escapeHtml(attrs.help)}</small>` : "";
     return `
-      <label>
+      <label class="asterline-store-submit__field asterline-store-submit__field--textarea">
         <span>${escapeHtml(label)}</span>
         <textarea name="${escapeAttr(name)}"${required}${placeholder}>${escapeHtml(attrs.value || "")}</textarea>
         ${help}
@@ -277,7 +277,7 @@
 
   function selectField(name, label, values) {
     return `
-      <label>
+      <label class="asterline-store-submit__field">
         <span>${escapeHtml(label)}</span>
         <select name="${escapeAttr(name)}" required>
           ${values.map((value) => option(value, value)).join("")}
